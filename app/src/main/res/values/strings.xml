@@ -1,3 +1,14 @@
 <resources>
     <string name="app_name">Android_App_002</string>
+<!--    TextView-->
+    <string name="textViewTittle_text">Ingreso al sistema</string>
+
+
+<!--    EditText-->
+    <string name="editTextUser_hint">Ingrese el Usuario</string>
+    <string name="editTextPassword_hint">Ingresa la Clave</string>
+
+<!--    Buttons-->
+    <string name="buttonOk_text">Ingresar</string>
+
 </resources>

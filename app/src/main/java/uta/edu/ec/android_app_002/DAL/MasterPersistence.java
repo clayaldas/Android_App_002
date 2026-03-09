@@ -21,7 +21,7 @@ public class MasterPersistence extends SQLiteOpenHelper {
 
     @Override
     public void onUpgrade(SQLiteDatabase sqLiteDatabase, int i, int i1) {
-        String CREATE_TABLE_CONTACT_UPGRADE = "CREATE TABLE Contact(Code integer PRIMARY KEY AUTOINCREMENT," +
+        String CREATE_TABLE_CONTACT_UPGRADE = "CREATE TABLE Contacts (Code integer PRIMARY KEY AUTOINCREMENT," +
                                               "Name text, LastName text, Age integer)";
         sqLiteDatabase.execSQL(CREATE_TABLE_CONTACT_UPGRADE);
     }

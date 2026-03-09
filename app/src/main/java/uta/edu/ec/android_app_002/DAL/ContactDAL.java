@@ -2,7 +2,10 @@ package uta.edu.ec.android_app_002.DAL;
 
 import android.content.ContentValues;
 import android.content.Context;
+import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
+
+import java.util.ArrayList;
 
 import uta.edu.ec.android_app_002.Entities.Contact;
 public class ContactDAL {
@@ -62,8 +65,20 @@ public class ContactDAL {
         Contact contact = null;
 
         try {
+            String select = "SELECT Name, LastName, Age " +
+                            "FROM Contacts " +
+                            "WHERE Code=" + code;
 
+            Cursor cursor = sql.rawQuery(select, null);
 
+            if (cursor.moveToFirst()) {
+                contact = new Contact();
+
+                contact.setName(cursor.getString(0));
+                contact.setLastName(cursor.getString(1));
+//                contact.setAge(cursor.getInt(2));
+                contact.setAge(Integer.parseInt(cursor.getString(2)));
+            }
         } catch (Exception e) {
             throw e;
         }
@@ -72,5 +87,85 @@ public class ContactDAL {
         }
 
         return  contact;
+    }
+
+    public ArrayList<Contact> selectAll() {
+        openReadable();
+
+        ArrayList<Contact> contactList = null;
+        Contact contact = null;
+
+        try {
+            String select = "SELECT Code, Name, LastName, Age " +
+                            "FROM Contacts";
+
+            Cursor cursor = sql.rawQuery(select, null);
+
+            if (cursor.moveToFirst()) {
+                contactList = new ArrayList<Contact>();
+
+                do {
+                    contact = new Contact();
+                    contact.setCode(Integer.parseInt(cursor.getString(0)));
+                    contact.setName(cursor.getString(1));
+                    contact.setLastName(cursor.getString(2));
+                    contact.setAge(Integer.parseInt(cursor.getString(3)));
+
+                    contactList.add(contact);
+                } while (cursor.moveToNext());
+            }
+        }
+        catch (Exception e) {
+            throw e;
+        }
+        finally {
+            sql.close();
+        }
+
+        return contactList;
+    }
+
+    public int update(Contact contact) {
+        openWritable();
+
+        int count = 0;
+
+        try {
+            ContentValues values = new ContentValues();
+
+            values.put("Name", contact.getName());
+            values.put("LastName", contact.getLastName());
+            values.put("Age", contact.getAge());
+            values.put("code", contact.getCode());
+
+            count =  sql.update("Contacts", values,
+                    "Code=" + contact.getCode(), null);
+        }
+        catch (Exception e) {
+            throw e;
+        }
+        finally {
+            sql.close();
+        }
+
+        return count;
+    }
+
+    public int delete (int code) {
+        int count = 0;
+
+        openWritable();
+
+        try {
+            count = sql.delete("Contacts", "Code=" + code, null);
+        }
+        catch (Exception e) {
+            throw e;
+        }
+        finally {
+            sql.close();
+        }
+
+        return count;
     }
 }

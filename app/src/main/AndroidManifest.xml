@@ -12,6 +12,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Android_App_002">
         <activity
+            android:name=".ShowAllActivity"
+            android:exported="false" />
+        <activity
             android:name=".MainActivity"
             android:exported="false" />
         <activity

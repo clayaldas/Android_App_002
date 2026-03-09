@@ -1,5 +1,6 @@
 package uta.edu.ec.android_app_002;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
@@ -104,11 +105,13 @@ public class MainActivity extends AppCompatActivity {
     }
     public void buttonDelete_Clic(View view) {
 
+
     }
     public void buttonUpdate_Clic(View view) {
 
     }
     public void buttonShowAll_Clic(View view) {
-
+        Intent intent = new Intent(this, ShowAllActivity.class );
+        startActivity(intent);;
     }
 }

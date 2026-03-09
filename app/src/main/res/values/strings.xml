@@ -6,7 +6,7 @@
     <string name="textViewTittle_text">Ingreso al sistema</string>
 
 
-<!--    EditText-->
+    <!--    EditText-->
     <string name="editTextUser_hint">Ingrese el Usuario</string>
     <string name="editTextPassword_hint">Ingresa la Clave</string>
     <!--    Buttons-->
@@ -26,4 +26,6 @@
     <string name="buttonUpdate_text">Actualizar</string>
     <string name="buttonShowAll_text">Mostrar todos</string>
 
+    <!--    ShowAllActivity-->
+    <string name="textViewMessage_text">Lista de Contactos</string>
 </resources>

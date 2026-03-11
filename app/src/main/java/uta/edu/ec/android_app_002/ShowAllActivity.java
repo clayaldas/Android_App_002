@@ -21,4 +21,6 @@ public class ShowAllActivity extends AppCompatActivity {
             return insets;
         });
     }
+
+
 }

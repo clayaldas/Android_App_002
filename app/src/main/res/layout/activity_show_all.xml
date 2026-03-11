@@ -21,7 +21,7 @@
         android:fillViewport="true">
 
         <ListView
-            android:id="@+id/listViwData"
+            android:id="@+id/listViewData"
             android:layout_width="match_parent"
             android:layout_height="match_parent"/>
 

@@ -1,16 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name" translatable="false">App with Data Base</string>
+    <string name="app_name" translatable="false">App con Base de Datos</string>
     <!--    LoginActivity-->
 
     <!--    TextView-->
-    <string name="textViewTittle_text" translatable="false">Enter System</string>
+    <string name="textViewTittle_text" translatable="false">Ingreso al sistema</string>
 
 
     <!--    EditText-->
-    <string name="editTextUser_hint" translatable="false">Enter user name</string>
-    <string name="editTextPassword_hint" translatable="false">Enter passwword</string>
+    <string name="editTextUser_hint" translatable="false">Ingrese el Usuario</string>
+    <string name="editTextPassword_hint" translatable="false">Ingresa la Clave</string>
     <!--    Buttons-->
-    <string name="buttonOk_text" translatable="false">OK</string>
+    <string name="buttonOk_text" translatable="false">Ingresar</string>
 
     <!--    MainActivity -->
     <!--    EditText -->
@@ -33,11 +34,11 @@
     <string name="menu_title_about" translatable="false">Acerca de...</string>
 
     <string name="menu_title_crud" translatable="false">Mantenimiento</string>
-    <string name="menu_title_insert" translatable="false">Acerca de...</string>
-    <string name="menu_title_search" translatable="false">Acerca de...</string>
+    <string name="menu_title_insert" translatable="false">Insertar</string>
+    <string name="menu_title_search" translatable="false">Buscar</string>
     <string name="menu_title_delete" translatable="false">Eliminar</string>
-    <string name="menu_title_modified" translatable="false">Acerca de...</string>
-    <string name="menu_title_showAll" translatable="false">Acerca de...</string>
+    <string name="menu_title_modified" translatable="false">Actualizar</string>
+    <string name="menu_title_showAll" translatable="false">Mostrar todos</string>
 
     <string name="menu_title_edit" translatable="false">Editar</string>
     <string name="menu_title_edit_copy" translatable="false">Copiar</string>

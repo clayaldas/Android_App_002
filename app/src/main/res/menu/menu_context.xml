@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item android:id="@+id/menuContextEdit" android:title="@string/menu_title_edit">
+        <menu>
+            <group android:id="@+id/menuContextGroupEdit">
+                <item android:id="@+id/menuContextCopy"
+                    android:title="@string/menu_title_edit_copy"/>
+                <item android:id="@+id/menuContextCut"
+                    android:title="@string/menu_title_edit_cut"/>
+                <item android:id="@+id/menuContextPaste"
+                    android:title="@string/menu_title_edit_paste"/>
+            </group>
+        </menu>
+    </item>
+
+</menu>

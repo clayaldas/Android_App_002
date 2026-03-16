@@ -2,12 +2,15 @@ package uta.edu.ec.android_app_002;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.activity.EdgeToEdge;
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
@@ -51,6 +54,10 @@ public class MainActivity extends AppCompatActivity {
 
     }
     public void buttonInsert_Clic(View view) {
+        makeInsert();
+    }
+
+    private void makeInsert() {
         String name = editTextName.getText().toString();
         String lastName = editTextLastName.getText().toString();
         String age = editTextAge.getText().toString();
@@ -113,5 +120,26 @@ public class MainActivity extends AppCompatActivity {
     public void buttonShowAll_Clic(View view) {
         Intent intent = new Intent(this, ShowAllActivity.class );
         startActivity(intent);;
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.menu_main, menu);
+        return super.onCreateOptionsMenu(menu);
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
+        int id = item.getItemId();
+
+        if ( id == R.id.menuAbout) {
+            Toast.makeText(this, "App de base de datos",
+                    Toast.LENGTH_SHORT).show();
+        }
+
+        if (id == R.id.menuInsert) {
+            makeInsert();
+        }
+        return super.onOptionsItemSelected(item);
     }
 }
